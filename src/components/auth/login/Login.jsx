@@ -17,7 +17,6 @@ const Login = () => {
         if(!isSigningIn) {
             setIsSigningIn(true)
             await doSignInWithEmailAndPassword(email, password)
-            // doSendEmailVerification()
         }
     }
 

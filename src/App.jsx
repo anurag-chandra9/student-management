@@ -4,7 +4,7 @@ import { app } from "./firebase/firebase.js";
 import Register from "./components/auth/register/Register.jsx";
 import Header from "./components/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
-import Login from "./components/auth/login/Login.jsx";
+import Login from "./components/auth/login/Login.jsx"; 
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
 import Addstudent from "./components/home/Addstudents.jsx";

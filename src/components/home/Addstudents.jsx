@@ -19,25 +19,18 @@ const AddStudent = () => {
   const [emergencyContact, setEmergencyContact] = useState("");
   const [enrollmentDate, setEnrollmentDate] = useState("");
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
     if (!ID || !name || !studentClass || !section || !rollNo || !email) {
       toast.error("Please fill in all required fields.");
       return;
     }
 
     try {
-
       await handleCreateNewListing(
-        ID,name,studentClass,section,rollNo,email,phoneNumber,
-        dateOfBirth,
-        address,
-        parentGuardianName,
-        emergencyContact,
-        enrollmentDate
+        ID, name, studentClass, section, rollNo, email, phoneNumber,
+        dateOfBirth, address, parentGuardianName, emergencyContact, enrollmentDate
       );
       toast.success("Student added successfully!");
       setID("");
@@ -181,6 +174,44 @@ const AddStudent = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="Enter address"
+                className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label htmlFor="parentGuardianName" className="block text-sm font-medium text-gray-600">
+                Parent/Guardian Name
+              </label>
+              <input
+                id="parentGuardianName"
+                type="text"
+                value={parentGuardianName}
+                onChange={(e) => setParentGuardianName(e.target.value)}
+                placeholder="Enter parent's name"
+                className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label htmlFor="emergencyContact" className="block text-sm font-medium text-gray-600">
+                Emergency Contact
+              </label>
+              <input
+                id="emergencyContact"
+                type="text"
+                value={emergencyContact}
+                onChange={(e) => setEmergencyContact(e.target.value)}
+                placeholder="Enter emergency contact"
+                className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label htmlFor="enrollmentDate" className="block text-sm font-medium text-gray-600">
+                Enrollment Date
+              </label>
+              <input
+                id="enrollmentDate"
+                type="date"
+                value={enrollmentDate}
+                onChange={(e) => setEnrollmentDate(e.target.value)}
                 className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
